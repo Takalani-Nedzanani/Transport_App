@@ -36,23 +36,23 @@ class LandingPage extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 0, 12, 55),
                     child: Container(
-                        child: Lottie.network(
-                      'https://lottie.host/f30bd1b7-0bc6-45ea-940c-392aa9555117/0gkYsVMLtY.json',
+                        child: Lottie.asset(
+                      'assets/animation/transport.json',
                       animate: true,
-                      width: 270,
-                      //height: 250,
+                      width: 300,
+                      height: 300,
                     )),
                   ),
                   // ignore: avoid_unnecessary_containers
                   Container(
                     //margin: EdgeInsets.fromLTRB(0, 0, 7.9, 84),
                     child: Text(
-                      'Empowering Student Finances.',
+                      'Joyful Journeys',
                       style: GoogleFonts.getFont(
                         'Poppins',
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
-                        color: const Color(0xFF000000),
+                        color: const Color.fromARGB(255, 0, 0, 0),
                       ),
                     ),
                   ),
@@ -64,8 +64,8 @@ class LandingPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       gradient: const LinearGradient(colors: [
-                        Color.fromARGB(255, 25, 208, 83),
-                        Color.fromARGB(255, 71, 37, 97),
+                        Color.fromARGB(255, 237, 196, 10),
+                        Color.fromARGB(255, 215, 214, 209),
                       ]),
                     ),
                     child: Container(
@@ -98,8 +98,8 @@ class LandingPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       gradient: const LinearGradient(colors: [
-                        Color.fromARGB(255, 25, 208, 83),
-                        Color.fromARGB(255, 71, 37, 97),
+                        Color.fromARGB(255, 215, 214, 209),
+                        Color.fromARGB(255, 237, 196, 10),
                       ]),
                     ),
                     child: Container(
@@ -135,15 +135,14 @@ class LandingPage extends StatelessWidget {
                           ),
                         );
                       },
-                      // ignore: avoid_unnecessary_containers
                       child: Container(
                         child: const Center(
                           child: Text(
                             'Forgot Password?',
                             style: TextStyle(
                               fontSize: 17,
-                              fontWeight: FontWeight.w100,
-                              color: Color.fromARGB(255, 95, 238, 164),
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 237, 196, 10),
                             ),
                             textAlign: TextAlign.center,
                           ),
