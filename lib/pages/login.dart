@@ -60,8 +60,8 @@ class _LoginState extends State<Login> {
           width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
-              Color.fromARGB(255, 25, 208, 83),
-              Color.fromARGB(255, 71, 37, 97),
+              Color.fromARGB(255, 237, 196, 10),
+              Color.fromARGB(255, 215, 214, 209),
             ]),
           ),
           child: const Padding(
@@ -109,7 +109,7 @@ class _LoginState extends State<Login> {
                         hintText: "Email",
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
-                              color: Color.fromARGB(255, 23, 184, 71)),
+                              color: Color.fromARGB(255, 237, 196, 10)),
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
@@ -142,7 +142,7 @@ class _LoginState extends State<Login> {
                         hintText: "Password",
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
-                            color: Color.fromARGB(255, 23, 184, 74),
+                            color: Color.fromARGB(255, 237, 196, 10),
                           ),
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -179,8 +179,8 @@ class _LoginState extends State<Login> {
                               'Forgot Password?',
                               style: TextStyle(
                                 fontSize: 17,
-                                fontWeight: FontWeight.w100,
-                                color: Color.fromARGB(255, 95, 238, 164),
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(255, 237, 196, 10),
                               ),
                               textAlign: TextAlign.right,
                             ),
@@ -202,8 +202,8 @@ class _LoginState extends State<Login> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
                             gradient: const LinearGradient(colors: [
-                              Color.fromARGB(255, 25, 208, 83),
-                              Color.fromARGB(255, 71, 37, 97),
+                              Color.fromARGB(255, 237, 196, 10),
+                              Color.fromARGB(255, 215, 214, 209),
                             ]),
                           ),
                           child: const Center(
@@ -241,14 +241,25 @@ class _LoginState extends State<Login> {
                                 ),
                               );
                             },
-                            child: const Text(
-                              "Sign up",
-                              style: TextStyle(
+                            child: Container(
+                              width: 100,
+                              padding: const EdgeInsets.all(15),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                gradient: const LinearGradient(colors: [
+                                  Color.fromARGB(255, 215, 214, 209),
+                                  Color.fromARGB(255, 237, 196, 10),
+                                ]),
+                              ),
+                              child: const Text(
+                                "SIGN UP",
+                                style: TextStyle(
 
-                                  ///done login page
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17,
-                                  color: Colors.black),
+                                    ///done login page
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17,
+                                    color: Color.fromARGB(255, 255, 255, 255)),
+                              ),
                             ),
                           ),
                         ],

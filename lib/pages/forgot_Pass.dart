@@ -34,8 +34,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
-              Color.fromARGB(255, 25, 208, 83),
-              Color.fromARGB(255, 71, 37, 97),
+              Color.fromARGB(255, 237, 196, 10),
+                        Color.fromARGB(255, 215, 214, 209),
               //Color(0xffB81736),
               //Color(0xff281537),
             ]),
@@ -118,7 +118,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 hintText: "Email",
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
-                                      color: Color.fromARGB(255, 23, 184, 47)),
+                                      color: Color.fromARGB(255, 237, 196, 10),),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
@@ -143,8 +143,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   gradient: const LinearGradient(colors: [
-                                    Color.fromARGB(255, 25, 208, 83),
-                                    Color.fromARGB(255, 71, 37, 97),
+                                    Color.fromARGB(255, 237, 196, 10),
+                        Color.fromARGB(255, 215, 214, 209),
                                   ]),
                                 ),
                                 child: const Center(
@@ -180,8 +180,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   gradient: const LinearGradient(colors: [
-                                    Color.fromARGB(255, 25, 208, 83),
-                                    Color.fromARGB(255, 71, 37, 97),
+                                     Color.fromARGB(255, 237, 196, 10),
+                        Color.fromARGB(255, 215, 214, 209),
                                   ]),
                                 ),
                                 child: const Center(

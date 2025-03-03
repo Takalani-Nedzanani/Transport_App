@@ -19,6 +19,11 @@ class _RegistrationState extends State<Registration> {
   late TextEditingController usernameController;
   late TextEditingController nameController;
   late TextEditingController passwordController;
+  late TextEditingController ageController;
+  late TextEditingController phoneController;
+  late TextEditingController addressController;
+  late TextEditingController schoolController;
+  late TextEditingController parentsNameController;
   List<String> docIDs = [];
 
   get prefixIcon => null;
@@ -29,6 +34,11 @@ class _RegistrationState extends State<Registration> {
     usernameController = TextEditingController();
     nameController = TextEditingController();
     passwordController = TextEditingController();
+    ageController = TextEditingController();
+    phoneController = TextEditingController();
+    addressController = TextEditingController();
+    schoolController = TextEditingController();
+    parentsNameController = TextEditingController();
   }
 
   @override
@@ -36,6 +46,11 @@ class _RegistrationState extends State<Registration> {
     usernameController.dispose();
     nameController.dispose();
     passwordController.dispose();
+    ageController.dispose();
+    phoneController.dispose();
+    addressController.dispose();
+    schoolController.dispose();
+    parentsNameController.dispose();
 
     super.dispose();
   }
@@ -50,8 +65,8 @@ class _RegistrationState extends State<Registration> {
           width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
-              Color.fromARGB(255, 25, 208, 83),
-              Color.fromARGB(255, 71, 37, 97),
+              Color.fromARGB(255, 237, 196, 10),
+              Color.fromARGB(255, 215, 214, 209),
             ]),
           ),
           child: const Padding(
@@ -109,7 +124,7 @@ class _RegistrationState extends State<Registration> {
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromARGB(255, 23, 184, 85)),
+                                            Color.fromARGB(255, 237, 196, 10)),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                 ),
@@ -124,7 +139,7 @@ class _RegistrationState extends State<Registration> {
                               ),
                             ),
                             const SizedBox(
-                              height: 10,
+                              height: 8,
                             ),
                             Padding(
                               padding:
@@ -142,11 +157,11 @@ class _RegistrationState extends State<Registration> {
                                         color: Color.fromARGB(255, 76, 76, 76)),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
-                                  hintText: "Name",
+                                  hintText: "Child's Name",
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromARGB(255, 23, 184, 79)),
+                                            Color.fromARGB(255, 237, 196, 10)),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                 ),
@@ -161,7 +176,192 @@ class _RegistrationState extends State<Registration> {
                               ),
                             ),
                             const SizedBox(
-                              height: 10,
+                              height: 8,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 25),
+                              child: TextFormField(
+                                keyboardType: TextInputType.text,
+                                controller: parentsNameController,
+                                decoration: InputDecoration(
+                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  fillColor:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  filled: true,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Color.fromARGB(255, 76, 76, 76)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  hintText: "Parent's Name",
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 237, 196, 10)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value.length <= 2) {
+                                    return "Enter a valid name";
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 25),
+                              child: TextFormField(
+                                keyboardType: TextInputType.text,
+                                controller: phoneController,
+                                decoration: InputDecoration(
+                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  fillColor:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  filled: true,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Color.fromARGB(255, 76, 76, 76)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  hintText: "Phone Number",
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 237, 196, 10)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value.length <= 2) {
+                                    return "Enter a valid name";
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 25),
+                              child: TextFormField(
+                                keyboardType: TextInputType.text,
+                                controller: ageController,
+                                decoration: InputDecoration(
+                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  fillColor:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  filled: true,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Color.fromARGB(255, 76, 76, 76)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  hintText: "Age of the child",
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 237, 196, 10)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value.length <= 2) {
+                                    return "Enter a valid name";
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 25),
+                              child: TextFormField(
+                                keyboardType: TextInputType.text,
+                                controller: addressController,
+                                decoration: InputDecoration(
+                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  fillColor:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  filled: true,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Color.fromARGB(255, 76, 76, 76)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  hintText: "Address",
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 237, 196, 10)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value.length <= 2) {
+                                    return "Enter a valid name";
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 25),
+                              child: TextFormField(
+                                keyboardType: TextInputType.text,
+                                controller: schoolController,
+                                decoration: InputDecoration(
+                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  fillColor:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  filled: true,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Color.fromARGB(255, 76, 76, 76)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  hintText: "School Name",
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 237, 196, 10)),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value.length <= 2) {
+                                    return "Enter a valid name";
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
                             ),
                             Padding(
                               padding:
@@ -185,7 +385,7 @@ class _RegistrationState extends State<Registration> {
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromARGB(255, 23, 184, 74)),
+                                            Color.fromARGB(255, 237, 196, 10)),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                 ),
@@ -219,13 +419,13 @@ class _RegistrationState extends State<Registration> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
                                     gradient: const LinearGradient(colors: [
-                                      Color.fromARGB(255, 25, 208, 83),
-                                      Color.fromARGB(255, 71, 37, 97),
+                                      Color.fromARGB(255, 237, 196, 10),
+                                      Color.fromARGB(255, 215, 214, 209),
                                     ]),
                                   ),
                                   child: const Center(
                                     child: Text(
-                                      "Register",
+                                      "REGISTER",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
@@ -259,14 +459,26 @@ class _RegistrationState extends State<Registration> {
                                         ),
                                       );
                                     },
-                                    child: const Text(
-                                      "Sign In",
-                                      style: TextStyle(
+                                    child: Container(
+                                      width: 100,
+                                      padding: const EdgeInsets.all(15),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(30),
+                                        gradient: const LinearGradient(colors: [
+                                          Color.fromARGB(255, 215, 214, 209),
+                                          Color.fromARGB(255, 237, 196, 10),
+                                        ]),
+                                      ),
+                                      child: const Text(
+                                        "SIGN IN",
+                                        style: TextStyle(
 
-                                          ///done login page
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 17,
-                                          color: Colors.black),
+                                            ///done login page
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 17,
+                                            color: Color.fromARGB(
+                                                255, 255, 255, 255)),
+                                      ),
                                     ),
                                   ),
                                 ],
