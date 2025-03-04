@@ -148,7 +148,8 @@ class _RegistrationState extends State<Registration> {
                                 keyboardType: TextInputType.text,
                                 controller: nameController,
                                 decoration: InputDecoration(
-                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  prefixIcon:
+                                      prefixIcon ?? Icon(Icons.child_care),
                                   fillColor:
                                       const Color.fromARGB(255, 255, 255, 255),
                                   filled: true,
@@ -222,7 +223,7 @@ class _RegistrationState extends State<Registration> {
                                 keyboardType: TextInputType.text,
                                 controller: phoneController,
                                 decoration: InputDecoration(
-                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  prefixIcon: prefixIcon ?? Icon(Icons.phone),
                                   fillColor:
                                       const Color.fromARGB(255, 255, 255, 255),
                                   filled: true,
@@ -259,7 +260,8 @@ class _RegistrationState extends State<Registration> {
                                 keyboardType: TextInputType.text,
                                 controller: ageController,
                                 decoration: InputDecoration(
-                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  prefixIcon:
+                                      prefixIcon ?? Icon(Icons.child_care),
                                   fillColor:
                                       const Color.fromARGB(255, 255, 255, 255),
                                   filled: true,
@@ -296,7 +298,8 @@ class _RegistrationState extends State<Registration> {
                                 keyboardType: TextInputType.text,
                                 controller: addressController,
                                 decoration: InputDecoration(
-                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  prefixIcon: prefixIcon ??
+                                      Icon(Icons.add_location_rounded),
                                   fillColor:
                                       const Color.fromARGB(255, 255, 255, 255),
                                   filled: true,
@@ -333,7 +336,8 @@ class _RegistrationState extends State<Registration> {
                                 keyboardType: TextInputType.text,
                                 controller: schoolController,
                                 decoration: InputDecoration(
-                                  prefixIcon: prefixIcon ?? Icon(Icons.person),
+                                  prefixIcon:
+                                      prefixIcon ?? Icon(Icons.school_outlined),
                                   fillColor:
                                       const Color.fromARGB(255, 255, 255, 255),
                                   filled: true,
