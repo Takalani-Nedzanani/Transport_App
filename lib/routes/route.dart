@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transport_app/pages/admin_Home_Dashboard.dart';
 import 'package:transport_app/pages/forgot_Pass.dart';
 import 'package:transport_app/pages/home_page.dart';
 import 'package:transport_app/pages/landing_page.dart';
@@ -11,6 +12,7 @@ class RouteManager {
   static const String loginPage = '/loginPage';
   static const String forgotPage = '/forgotPage';
   static const String homePage = '/homePage';
+  static const String adminPage = '/adminDashboard';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -35,6 +37,11 @@ class RouteManager {
       case homePage:
         return MaterialPageRoute(
           builder: (context) => const Home(),
+        );
+
+        case adminPage:
+        return MaterialPageRoute(
+          builder: (context) => const AdminDashboard(),
         );
 
       default:

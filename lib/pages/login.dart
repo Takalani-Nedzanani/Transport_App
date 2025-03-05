@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:transport_app/services/auth_service.dart';
-import 'package:transport_app/main.dart';
+// import 'package:transport_app/main.dart';
 import 'package:transport_app/pages/forgot_pass.dart';
 import 'package:transport_app/pages/register.dart';
 
@@ -287,14 +289,44 @@ class _LoginState extends State<Login> {
         );
       },
     );
+    // try {
+    //   await FirebaseAuth.instance.signInWithEmailAndPassword(
+    //     email: usernameController.text.trim(),
+    //     password: passwordController.text.trim(),
+    //   );
+
+    // } on FirebaseAuthException catch (e) {
+    //   Utils.showSnackBar(e.toString());
+    // }
+    // navigatorKey.currentState!.popUntil((route) => route.isFirst);
+
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: usernameController.text.trim(),
         password: passwordController.text.trim(),
       );
+
+      DocumentSnapshot userDoc = await FirebaseFirestore.instance
+          .collection("users")
+          .doc(userCredential.user!.uid)
+          .get();
+
+      String role = userDoc['role'];
+
+      if (role == 'admin') {
+        Navigator.pushReplacementNamed(
+            // ignore: use_build_context_synchronously
+            context,
+            '/adminDashboard'); // Admin Home Screen
+      } else {
+        Navigator.pushReplacementNamed(
+            // ignore: use_build_context_synchronously
+            context,
+            '/homePage'); // User Home Screen
+      }
     } on FirebaseAuthException catch (e) {
       Utils.showSnackBar(e.toString());
     }
-    navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 }

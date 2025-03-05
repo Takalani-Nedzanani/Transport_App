@@ -14,7 +14,7 @@ Future main() async {
       options: const FirebaseOptions(
           apiKey: "AIzaSyB5yDlF-4sGO4c1B9i4mz2FSHUbuDed8mo",
           messagingSenderId: "227599926991",
-          appId: "1:227599926991:android:46bf38e5fc3a236890d9ba",
+          appId: "1:227599926991:android:9e1018e786db74b390d9ba",
           projectId: "cut-smartbanking-app",
           storageBucket: "cut-smartbanking-app.appspot.com"));
 

@@ -516,6 +516,8 @@ class _RegistrationState extends State<Registration> {
       },
     );
     try {
+      // ignore: unused_local_variable
+
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: usernameController.text.trim(),
         password: passwordController.text.trim(),
@@ -523,6 +525,13 @@ class _RegistrationState extends State<Registration> {
       addUserDetails(
         nameController.text.trim(),
         usernameController.text.trim(),
+        ageController.text.trim(),
+        phoneController.text.trim(),
+        addressController.text.trim(),
+        schoolController.text.trim(),
+        parentsNameController.text.trim(),
+        passwordController.text.trim(),
+        "user",
       );
 
       Utils.showSnackBar("Successfully Registered");
@@ -533,10 +542,31 @@ class _RegistrationState extends State<Registration> {
     navigatorKey.currentState!.pop();
   }
 
-  Future addUserDetails(String firstname, String username) async {
-    await FirebaseFirestore.instance.collection("users").add({
+//store information in the database
+  Future addUserDetails(
+    String firstname,
+    String username,
+    String age,
+    String phone,
+    String address,
+    String school,
+    String parentsName,
+    String password,
+    String role,
+  ) async {
+    await FirebaseFirestore.instance
+        .collection("users")
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .set({
       'first name': firstname,
       'username': username,
+      'age': age,
+      'phone': phone,
+      'address': address,
+      'school': school,
+      'parents name': parentsName,
+      'password': password,
+      'role': role, //admin or user
     });
   }
 }
