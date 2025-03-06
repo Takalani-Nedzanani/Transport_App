@@ -41,7 +41,7 @@ class RouteManager {
 
         case adminPage:
         return MaterialPageRoute(
-          builder: (context) => const AdminDashboard(),
+          builder: (context) =>  AdminDashboard(),
         );
 
       default:

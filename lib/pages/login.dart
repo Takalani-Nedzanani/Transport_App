@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:transport_app/pages/admin_Home_Dashboard.dart';
+import 'package:transport_app/pages/home_page.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:transport_app/services/auth_service.dart';
 // import 'package:transport_app/main.dart';
@@ -315,15 +317,15 @@ class _LoginState extends State<Login> {
       String role = userDoc['role'];
 
       if (role == 'admin') {
-        Navigator.pushReplacementNamed(
-            // ignore: use_build_context_synchronously
-            context,
-            '/adminDashboard'); // Admin Home Screen
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AdminDashboard()),
+        ); // Admin Home Screen
       } else {
-        Navigator.pushReplacementNamed(
-            // ignore: use_build_context_synchronously
-            context,
-            '/homePage'); // User Home Screen
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Home()),
+        ); // User Home Screen
       }
     } on FirebaseAuthException catch (e) {
       Utils.showSnackBar(e.toString());

@@ -566,7 +566,8 @@ class _RegistrationState extends State<Registration> {
       'school': school,
       'parents name': parentsName,
       'password': password,
-      'role': role, //admin or user
+      'role': role,
+      'pickedUp': false,
     });
   }
 }
