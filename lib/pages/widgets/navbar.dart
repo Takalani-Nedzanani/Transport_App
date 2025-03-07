@@ -65,7 +65,7 @@ class _NavbarState extends State<Navbar> {
                 },
               );
             },
-            child: const Icon(Icons.comment_rounded),
+            child: const Icon(Icons.location_city_outlined),
           ),
           ElevatedButton(
             style: ButtonStyle(
