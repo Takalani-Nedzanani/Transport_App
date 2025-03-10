@@ -1,19 +1,19 @@
 import 'package:transport_app/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:transport_app/pages/admin_Home_Dashboard.dart';
+import 'package:transport_app/pages/admin_profile.dart';
 
 import 'package:transport_app/pages/home_page.dart';
-import 'package:transport_app/pages/user_profile.dart';
 
-class Navbar extends StatefulWidget {
-  const Navbar({super.key});
+class AdminNavbar extends StatefulWidget {
+  const AdminNavbar({super.key});
 
   @override
-  State<Navbar> createState() => _NavbarState();
+  State<AdminNavbar> createState() => _AdminNavbarState();
 }
 
-class _NavbarState extends State<Navbar> {
+class _AdminNavbarState extends State<AdminNavbar> {
   @override
   Widget build(BuildContext context) {
     return navbar(context);
@@ -39,7 +39,7 @@ class _NavbarState extends State<Navbar> {
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const Home(),
+                      builder: (context) => const AdminDashboard(),
                     ),
                   );
                 },
@@ -60,7 +60,7 @@ class _NavbarState extends State<Navbar> {
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const UserProfile(),
+                      builder: (context) => const AdminProfile(),
                     ),
                   );
                 },
@@ -104,8 +104,7 @@ class _NavbarState extends State<Navbar> {
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    const Home(),
+                                builder: (context) => const Home(),
                               ),
                             );
                           },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:transport_app/pages/widgets/navbar.dart';
+import 'package:transport_app/pages/widgets/admin_navbar.dart';
+
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
@@ -13,7 +14,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const Navbar(),
+      bottomNavigationBar: const AdminNavbar(),
       appBar: AppBar(title: Text('Joyful Journeys Kids List')),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('users').snapshots(),
