@@ -2,7 +2,6 @@ import 'package:transport_app/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-
 import 'package:transport_app/pages/home_page.dart';
 import 'package:transport_app/pages/user_profile.dart';
 
@@ -21,18 +20,17 @@ class _NavbarState extends State<Navbar> {
 
   Container navbar(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 5, bottom: 15),
-      color: const Color(0xFFF0F4F3),
+      padding: const EdgeInsets.only(top: 5, bottom: 15, left: 14, right: 14),
+      color: const Color.fromARGB(255, 249, 233, 156),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 104, 237, 224)),
-              backgroundColor: getColor(
-                  const Color.fromARGB(255, 111, 238, 245),
-                  const Color.fromARGB(255, 119, 242, 229)),
+                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
+              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
+                  const Color.fromARGB(255, 240, 211, 64)),
             ),
             onPressed: () {
               setState(
@@ -50,10 +48,9 @@ class _NavbarState extends State<Navbar> {
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 122, 238, 226)),
-              backgroundColor: getColor(
-                  const Color.fromARGB(255, 109, 241, 228),
-                  const Color.fromARGB(255, 118, 242, 230)),
+                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
+              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
+                  const Color.fromARGB(255, 240, 211, 64)),
             ),
             onPressed: () {
               setState(
@@ -71,9 +68,9 @@ class _NavbarState extends State<Navbar> {
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 106, 236, 223)),
-              backgroundColor: getColor(const Color.fromARGB(255, 97, 227, 214),
-                  const Color.fromARGB(255, 106, 236, 223)),
+                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
+              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
+                  const Color.fromARGB(255, 240, 211, 64)),
             ),
             onPressed: () {
               setState(() {
@@ -104,8 +101,7 @@ class _NavbarState extends State<Navbar> {
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    const Home(),
+                                builder: (context) => const Home(),
                               ),
                             );
                           },

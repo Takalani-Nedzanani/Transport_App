@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:transport_app/pages/widgets/admin_navbar.dart';
 
-
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
 
@@ -24,6 +23,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
           }
 
           return ListView(
+            padding: const EdgeInsets.all(8),
             children: snapshot.data!.docs.map((user) {
               bool isPickedUp =
                   user['pickedUp'] ?? false; // Default to false if null
