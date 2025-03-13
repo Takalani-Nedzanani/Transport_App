@@ -21,8 +21,12 @@ class _HomeState extends State<Home> {
 
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-        title: const Text("Welcome To Joyful Journeys"),
-        backgroundColor: const Color.fromARGB(255, 108, 245, 231),
+        title: const Text(
+          "Welcome To Joyful Journeys",
+          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+          textAlign: TextAlign.center,
+        ),
+        backgroundColor: const Color.fromARGB(255, 245, 237, 30),
         elevation: 0,
       ),
 

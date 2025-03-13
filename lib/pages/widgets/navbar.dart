@@ -78,7 +78,7 @@ class _NavbarState extends State<Navbar> {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      backgroundColor: const Color.fromARGB(255, 131, 156, 168),
+                      backgroundColor: const Color.fromARGB(255, 233, 208, 13),
                       actionsAlignment: MainAxisAlignment.spaceEvenly,
                       title: const Center(
                         child: Text(

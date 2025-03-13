@@ -79,7 +79,7 @@ class _AdminNavbarState extends State<AdminNavbar> {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      backgroundColor: const Color.fromARGB(255, 131, 156, 168),
+                      backgroundColor: const Color.fromARGB(255, 238, 184, 8),
                       actionsAlignment: MainAxisAlignment.spaceEvenly,
                       title: const Center(
                         child: Text(
