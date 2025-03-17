@@ -43,6 +43,8 @@ dependencies:
   email_validator: ^3.0.0
   lottie: ^3.3.1
   flutter_svg: ^2.0.17
+  geolocator: ^13.0.2
+  google_maps_flutter: ^2.10.1
 
 dev_dependencies:
   flutter_test:
