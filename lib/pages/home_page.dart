@@ -58,13 +58,16 @@ class _HomeState extends State<Home> {
     ));
   }
 }*/
+/*AIzaSyCXwPTd4_HaWjymg3MHjDsrManyeAqHuYM //api key
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   */
 
-
+/*
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:transport_app/pages/widgets/navbar.dart';
 
 class Home extends StatefulWidget {
@@ -167,6 +170,85 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}*/
+
+
+
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:transport_app/pages/widgets/navbar.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  GoogleMapController? _mapController;
+  LatLng? adminLocation;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchAdminLocation();
+  }
+
+  // Fetch Admin's location from Firestore
+  void _fetchAdminLocation() {
+    FirebaseFirestore.instance.collection('admin_location').doc('location').snapshots().listen((doc) {
+      if (doc.exists) {
+        setState(() {
+          adminLocation = LatLng(doc['latitude'], doc['longitude']);
+        });
+
+        if (_mapController != null) {
+          _mapController!.animateCamera(
+            CameraUpdate.newLatLng(adminLocation!),
+          );
+        }
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        bottomNavigationBar: const Navbar(),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        appBar: AppBar(
+          title: const Text(
+            "Welcome To Joyful Journeys",
+            style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+            textAlign: TextAlign.center,
+          ),
+          backgroundColor: const Color.fromARGB(255, 245, 237, 30),
+          elevation: 0,
+        ),
+        body: adminLocation == null
+            ? Center(child: CircularProgressIndicator())
+            : GoogleMap(
+                initialCameraPosition: CameraPosition(
+                  target: adminLocation!,
+                  zoom: 15,
+                ),
+                markers: {
+                  Marker(
+                    markerId: MarkerId("admin_location"),
+                    position: adminLocation!,
+                    infoWindow: InfoWindow(title: "Admin's Location"),
+                  ),
+                },
+                onMapCreated: (GoogleMapController controller) {
+                  _mapController = controller;
+                },
+              ),
       ),
     );
   }
