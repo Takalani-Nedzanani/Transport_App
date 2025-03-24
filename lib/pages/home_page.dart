@@ -175,8 +175,7 @@ class _HomeState extends State<Home> {
   }
 }*/
 
-
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:transport_app/pages/widgets/navbar.dart';
@@ -201,7 +200,11 @@ class _HomeState extends State<Home> {
 
   // Fetch Admin's location from Firestore
   void _fetchAdminLocation() {
-    FirebaseFirestore.instance.collection('admin_location').doc('location').snapshots().listen((doc) {
+    FirebaseFirestore.instance
+        .collection('admin_location')
+        .doc('location')
+        .snapshots()
+        .listen((doc) {
       if (doc.exists) {
         setState(() {
           adminLocation = LatLng(doc['latitude'], doc['longitude']);
@@ -231,26 +234,61 @@ class _HomeState extends State<Home> {
           backgroundColor: const Color.fromARGB(255, 245, 237, 30),
           elevation: 0,
         ),
-        body: adminLocation == null
-            ? Center(child: CircularProgressIndicator())
-            : GoogleMap(
-                initialCameraPosition: CameraPosition(
-                  target: adminLocation!,
-                  zoom: 15,
-                ),
-                markers: {
-                  Marker(
-                    markerId: MarkerId("admin_location"),
-                    position: adminLocation!,
-                    infoWindow: InfoWindow(title: "Admin's Location"),
+        body: Column(
+          children: [
+            // Picked Up Status
+            StreamBuilder<DocumentSnapshot>(
+              stream: FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(FirebaseAuth.instance.currentUser!.uid)
+                  .snapshots(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return Center(child: CircularProgressIndicator());
+                }
+                bool isPickedUp = snapshot.data!['pickedUp'] ?? false;
+
+                return Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    isPickedUp
+                        ? 'You have been picked up!'
+                        : 'You are not picked up yet!',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
                   ),
-                },
-                onMapCreated: (GoogleMapController controller) {
-                  _mapController = controller;
-                },
-              ),
+                );
+              },
+            ),
+            Expanded(
+              child: adminLocation == null
+                  ? Center(child: CircularProgressIndicator())
+                  : GoogleMap(
+                      initialCameraPosition: CameraPosition(
+                        target: adminLocation!,
+                        zoom: 15,
+                      ),
+                      markers: <Marker>{
+                        Marker(
+                          markerId: MarkerId("admin_location"),
+                          position: adminLocation!,
+                          infoWindow: InfoWindow(title: "Admin's Location"),
+                        ),
+                      },
+                      onMapCreated: (GoogleMapController controller) {
+                        _mapController = controller;
+                      },
+                    ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
