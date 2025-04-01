@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:transport_app/pages/admin_Home_Dashboard.dart';
-import 'package:transport_app/pages/home_page.dart';
-// import 'package:flutter/foundation.dart';
+import 'package:transport_app/pages/admin/admin_Home_Dashboard.dart';
+import 'package:transport_app/pages/user/home_page.dart';
+
 import 'package:transport_app/services/auth_service.dart';
-// import 'package:transport_app/main.dart';
+
 import 'package:transport_app/pages/forgot_pass.dart';
 import 'package:transport_app/pages/register.dart';
 

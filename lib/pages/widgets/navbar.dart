@@ -2,8 +2,8 @@ import 'package:transport_app/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'package:transport_app/pages/home_page.dart';
-import 'package:transport_app/pages/user_profile.dart';
+import 'package:transport_app/pages/user/home_page.dart';
+import 'package:transport_app/pages/user/user_profile.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
@@ -21,16 +21,17 @@ class _NavbarState extends State<Navbar> {
   Container navbar(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 5, bottom: 15, left: 14, right: 14),
-      color: const Color.fromARGB(255, 249, 233, 156),
+      color: const Color.fromARGB(255, 255, 255, 255),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
-              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
-                  const Color.fromARGB(255, 240, 211, 64)),
+                  Colors.black, const Color.fromARGB(255, 130, 129, 127)),
+              backgroundColor: getColor(
+                  const Color.fromARGB(255, 130, 129, 127),
+                  const Color.fromARGB(255, 130, 129, 127)),
             ),
             onPressed: () {
               setState(
@@ -43,34 +44,42 @@ class _NavbarState extends State<Navbar> {
                 },
               );
             },
-            child: const Icon(Icons.house_outlined),
+            child: const Icon(
+              Icons.house_outlined,
+              color: Colors.black,
+            ),
           ),
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
-              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
-                  const Color.fromARGB(255, 240, 211, 64)),
+                  Colors.black, const Color.fromARGB(255, 130, 129, 127)),
+              backgroundColor: getColor(
+                  const Color.fromARGB(255, 130, 129, 127),
+                  const Color.fromARGB(255, 130, 129, 127)),
             ),
             onPressed: () {
               setState(
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const UserProfile(),
+                      builder: (context) => const UserProfilePage(),
                     ),
                   );
                 },
               );
             },
-            child: const Icon(Icons.person),
+            child: const Icon(
+              Icons.person,
+              color: Colors.black,
+            ),
           ),
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
-              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
-                  const Color.fromARGB(255, 240, 211, 64)),
+                  Colors.black, const Color.fromARGB(255, 130, 129, 127)),
+              backgroundColor: getColor(
+                  const Color.fromARGB(255, 130, 129, 127),
+                  const Color.fromARGB(255, 130, 129, 127)),
             ),
             onPressed: () {
               setState(() {
@@ -78,13 +87,13 @@ class _NavbarState extends State<Navbar> {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      backgroundColor: const Color.fromARGB(255, 233, 208, 13),
+                      backgroundColor: const Color.fromARGB(255, 130, 129, 127),
                       actionsAlignment: MainAxisAlignment.spaceEvenly,
                       title: const Center(
                         child: Text(
                           "Logout",
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Color.fromARGB(255, 0, 0, 0),
                             fontSize: 25,
                           ),
                         ),
@@ -133,7 +142,10 @@ class _NavbarState extends State<Navbar> {
                 );
               });
             },
-            child: const Icon(Icons.logout_outlined),
+            child: const Icon(
+              Icons.logout_outlined,
+              color: Colors.black,
+            ),
           ),
         ],
       ),

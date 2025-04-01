@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:transport_app/pages/admin_Home_Dashboard.dart';
+import 'package:transport_app/pages/admin/admin_Home_Dashboard.dart';
 import 'package:transport_app/pages/forgot_Pass.dart';
-import 'package:transport_app/pages/home_page.dart';
+import 'package:transport_app/pages/user/home_page.dart';
 import 'package:transport_app/pages/landing_page.dart';
 import 'package:transport_app/pages/login.dart';
 import 'package:transport_app/pages/register.dart';

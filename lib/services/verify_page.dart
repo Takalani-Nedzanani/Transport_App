@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:transport_app/services/auth_service.dart';
-import 'package:transport_app/pages/home_page.dart';
+import 'package:transport_app/pages/user/home_page.dart';
 import 'package:transport_app/pages/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +41,7 @@ class _VerifyPageState extends State<VerifyPage> {
       : Scaffold(
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           appBar: AppBar(
-            backgroundColor: const Color.fromARGB(255, 42, 163, 151),
+            backgroundColor: const Color.fromARGB(255, 120, 121, 121),
             elevation: 0,
           ),
           body: Padding(
@@ -50,7 +50,7 @@ class _VerifyPageState extends State<VerifyPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AlertDialog(
-                  backgroundColor: const Color.fromARGB(255, 131, 156, 168),
+                  backgroundColor: const Color.fromARGB(255, 161, 162, 163),
                   actionsAlignment: MainAxisAlignment.spaceEvenly,
                   title: const Center(
                     child: Text(
@@ -84,7 +84,7 @@ class _VerifyPageState extends State<VerifyPage> {
                       child: const Text(
                         "Resend Email",
                         style: TextStyle(
-                          color: Color.fromARGB(255, 23, 88, 56),
+                          color: Color.fromARGB(255, 239, 55, 8),
                           fontSize: 18,
                         ),
                       ),

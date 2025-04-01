@@ -1,10 +1,10 @@
 import 'package:transport_app/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:transport_app/pages/admin_Home_Dashboard.dart';
-import 'package:transport_app/pages/admin_profile.dart';
+import 'package:transport_app/pages/admin/admin_Home_Dashboard.dart';
+import 'package:transport_app/pages/admin/admin_profile.dart';
 
-import 'package:transport_app/pages/home_page.dart';
+import 'package:transport_app/pages/user/home_page.dart';
 
 class AdminNavbar extends StatefulWidget {
   const AdminNavbar({super.key});
@@ -22,16 +22,17 @@ class _AdminNavbarState extends State<AdminNavbar> {
   Container navbar(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 5, bottom: 15, left: 14, right: 14),
-      color: const Color.fromARGB(255, 249, 233, 156),
+      color: const Color.fromARGB(255, 255, 255, 255),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
-              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
-                  const Color.fromARGB(255, 240, 211, 64)),
+                  Colors.black, const Color.fromARGB(255, 130, 129, 127)),
+              backgroundColor: getColor(
+                  const Color.fromARGB(255, 130, 129, 127),
+                  const Color.fromARGB(255, 130, 129, 127)),
             ),
             onPressed: () {
               setState(
@@ -44,14 +45,18 @@ class _AdminNavbarState extends State<AdminNavbar> {
                 },
               );
             },
-            child: const Icon(Icons.house_outlined),
+            child: const Icon(
+              Icons.house_outlined,
+              color: Colors.black,
+            ),
           ),
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
-              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
-                  const Color.fromARGB(255, 240, 211, 64)),
+                  Colors.black, const Color.fromARGB(255, 130, 129, 127)),
+              backgroundColor: getColor(
+                  const Color.fromARGB(255, 130, 129, 127),
+                  const Color.fromARGB(255, 130, 129, 127)),
             ),
             onPressed: () {
               setState(
@@ -64,14 +69,18 @@ class _AdminNavbarState extends State<AdminNavbar> {
                 },
               );
             },
-            child: const Icon(Icons.person),
+            child: const Icon(
+              Icons.person,
+              color: Colors.black,
+            ),
           ),
           ElevatedButton(
             style: ButtonStyle(
               foregroundColor: getColor(
-                  Colors.black, const Color.fromARGB(255, 251, 210, 5)),
-              backgroundColor: getColor(const Color.fromARGB(255, 246, 201, 3),
-                  const Color.fromARGB(255, 240, 211, 64)),
+                  Colors.black, const Color.fromARGB(255, 130, 129, 127)),
+              backgroundColor: getColor(
+                  const Color.fromARGB(255, 130, 129, 127),
+                  const Color.fromARGB(255, 130, 129, 127)),
             ),
             onPressed: () {
               setState(() {
@@ -79,7 +88,7 @@ class _AdminNavbarState extends State<AdminNavbar> {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      backgroundColor: const Color.fromARGB(255, 238, 184, 8),
+                      backgroundColor: const Color.fromARGB(255, 130, 129, 127),
                       actionsAlignment: MainAxisAlignment.spaceEvenly,
                       title: const Center(
                         child: Text(
@@ -134,7 +143,10 @@ class _AdminNavbarState extends State<AdminNavbar> {
                 );
               });
             },
-            child: const Icon(Icons.logout_outlined),
+            child: const Icon(
+              Icons.logout_outlined,
+              color: Colors.black,
+            ),
           ),
         ],
       ),

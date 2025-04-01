@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:transport_app/pages/forgot_pass.dart';
 import 'package:transport_app/pages/login.dart';
 import 'package:transport_app/pages/register.dart';
@@ -15,7 +17,7 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          color: Color(0xFFF0F4F3),
+          color: Color.fromARGB(255, 255, 255, 255),
         ),
         child: Stack(
           children: [
@@ -43,7 +45,7 @@ class LandingPage extends StatelessWidget {
                       height: 300,
                     )),
                   ),
-                  // ignore: avoid_unnecessary_containers
+                  
                   Container(
                     //margin: EdgeInsets.fromLTRB(0, 0, 7.9, 84),
                     child: Text(
