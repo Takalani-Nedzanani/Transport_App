@@ -118,7 +118,6 @@ class _HomeState extends State<Home> {
   }
 }*/
 
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -192,7 +191,7 @@ class _HomeState extends State<Home> {
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             textAlign: TextAlign.center,
           ),
-          backgroundColor: const Color.fromARGB(255, 245, 237, 30),
+          backgroundColor: const Color.fromARGB(255, 130, 129, 127),
           elevation: 0,
         ),
         body: StreamBuilder<DocumentSnapshot>(
@@ -259,4 +258,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-

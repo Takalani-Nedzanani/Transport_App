@@ -94,6 +94,7 @@ class _NavbarState extends State<Navbar> {
                           "Logout",
                           style: TextStyle(
                             color: Color.fromARGB(255, 0, 0, 0),
+                            fontWeight: FontWeight.bold,
                             fontSize: 25,
                           ),
                         ),
@@ -102,6 +103,7 @@ class _NavbarState extends State<Navbar> {
                         "Are You sure You Want To Log Out Of Your Account?",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 0, 0, 0),
                           fontSize: 20,
                         ),
                       ),
@@ -132,7 +134,7 @@ class _NavbarState extends State<Navbar> {
                             "Logout",
                             style: TextStyle(
                               fontSize: 18,
-                              color: Color.fromARGB(255, 167, 39, 39),
+                              color: Color.fromARGB(255, 242, 40, 40),
                             ),
                           ),
                         ),

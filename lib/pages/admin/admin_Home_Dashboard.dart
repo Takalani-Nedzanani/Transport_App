@@ -70,7 +70,10 @@ class _AdminDashboardState extends State<AdminDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const AdminNavbar(),
-      appBar: AppBar(title: Text('Joyful Journeys Kids List')),
+      appBar: AppBar(
+        title: Text('Joyful Journeys Kids List'),
+        backgroundColor: const Color.fromARGB(255, 130, 129, 127),
+      ),
       body: Column(
         children: [
           ElevatedButton(
@@ -88,7 +91,10 @@ class _AdminDashboardState extends State<AdminDashboard> {
 
                 return ListView(
                   padding: const EdgeInsets.all(8),
-                  children: snapshot.data!.docs.map((user) {
+                  // hides the admin from showing on the list
+                  children: snapshot.data!.docs
+                      .where((user) => user['role'] != 'admin')
+                      .map((user) {
                     bool isPickedUp = user['pickedUp'] ?? false;
 
                     return ListTile(
@@ -122,7 +128,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 );
               },
             ),
-          ),
+          )
         ],
       ),
     );
