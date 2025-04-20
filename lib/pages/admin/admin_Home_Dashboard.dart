@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:transport_app/pages/user/user_details_page.dart';
 import 'package:transport_app/pages/widgets/admin_navbar.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -71,7 +72,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
     return Scaffold(
       bottomNavigationBar: const AdminNavbar(),
       appBar: AppBar(
-        title: Text('Joyful Journeys Kids List'),
+        title: Text('Joyful Journeys List'),
         backgroundColor: const Color.fromARGB(255, 130, 129, 127),
       ),
       body: Column(
@@ -98,6 +99,15 @@ class _AdminDashboardState extends State<AdminDashboard> {
                     bool isPickedUp = user['pickedUp'] ?? false;
 
                     return ListTile(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                UserDetailsPage(userId: user.id),
+                          ),
+                        );
+                      },
                       title: Text(user['first name'],
                           style: TextStyle(
                               fontSize: 25, fontWeight: FontWeight.bold)),

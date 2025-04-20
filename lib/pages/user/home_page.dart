@@ -162,7 +162,7 @@ class _HomeState extends State<Home> {
 
   void _showPickupAlert(bool pickedUp) {
     final message = pickedUp
-        ? '🎉 You have been picked up by the admin!'
+        ? '🎉 You have been picked up by the Driver!'
         : '🚨 You are no longer marked as picked up.';
     showDialog(
       context: context,
