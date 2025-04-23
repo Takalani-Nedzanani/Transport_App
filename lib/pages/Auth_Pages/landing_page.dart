@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_unnecessary_containers
 
 import 'package:transport_app/pages/forgot_pass.dart';
-import 'package:transport_app/pages/login.dart';
-import 'package:transport_app/pages/register.dart';
+import 'package:transport_app/pages/Auth_Pages/login.dart';
+import 'package:transport_app/pages/Auth_Pages/register.dart';
 import 'package:lottie/lottie.dart';
 
 import 'package:flutter/material.dart';

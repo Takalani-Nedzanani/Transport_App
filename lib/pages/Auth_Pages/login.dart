@@ -5,7 +5,7 @@ import 'package:transport_app/pages/user/home_page.dart';
 import 'package:transport_app/services/auth_service.dart';
 
 import 'package:transport_app/pages/forgot_pass.dart';
-import 'package:transport_app/pages/register.dart';
+import 'package:transport_app/pages/Auth_Pages/register.dart';
 
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';

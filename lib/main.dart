@@ -1,6 +1,6 @@
 import 'package:transport_app/services/auth_service.dart';
 
-import 'package:transport_app/pages/landing_page.dart';
+import 'package:transport_app/pages/Auth_Pages/landing_page.dart';
 
 import 'package:transport_app/services/verify_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
