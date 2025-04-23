@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers
 
-import 'package:transport_app/pages/forgot_pass.dart';
+import 'package:transport_app/pages/Auth_Pages/forgot_pass.dart';
 import 'package:transport_app/pages/Auth_Pages/login.dart';
 import 'package:transport_app/pages/Auth_Pages/register.dart';
 import 'package:lottie/lottie.dart';
@@ -45,7 +45,6 @@ class LandingPage extends StatelessWidget {
                       height: 300,
                     )),
                   ),
-                  
                   Container(
                     //margin: EdgeInsets.fromLTRB(0, 0, 7.9, 84),
                     child: Text(

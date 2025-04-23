@@ -207,9 +207,9 @@ class _AdminProfileState extends State<AdminProfile> {
               ),
               const SizedBox(height: 20),
               _buildEditableField(
-                label: 'Child\'s Name',
+                label: 'Name',
                 controller: nameController,
-                icon: Icons.child_care,
+                icon: Icons.person,
                 validator: (value) {
                   if (value == null || value.isEmpty || value.length <= 2) {
                     return "Enter a valid name";
@@ -231,17 +231,17 @@ class _AdminProfileState extends State<AdminProfile> {
                   return null;
                 },
               ),
-              _buildEditableField(
-                label: 'Parent\'s Name',
-                controller: parentsNameController,
-                icon: Icons.person,
-                validator: (value) {
-                  if (value == null || value.isEmpty || value.length <= 2) {
-                    return "Enter a valid name";
-                  }
-                  return null;
-                },
-              ),
+              // _buildEditableField(
+              //   label: 'Parent\'s Name',
+              //   controller: parentsNameController,
+              //   icon: Icons.person,
+              //   validator: (value) {
+              //     if (value == null || value.isEmpty || value.length <= 2) {
+              //       return "Enter a valid name";
+              //     }
+              //     return null;
+              //   },
+              // ),
               _buildEditableField(
                 label: 'Phone Number',
                 controller: phoneController,
@@ -254,18 +254,18 @@ class _AdminProfileState extends State<AdminProfile> {
                   return null;
                 },
               ),
-              _buildEditableField(
-                label: 'Age',
-                controller: ageController,
-                icon: Icons.cake,
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Enter a valid age";
-                  }
-                  return null;
-                },
-              ),
+              // _buildEditableField(
+              //   label: 'Age',
+              //   controller: ageController,
+              //   icon: Icons.cake,
+              //   keyboardType: TextInputType.number,
+              //   validator: (value) {
+              //     if (value == null || value.isEmpty) {
+              //       return "Enter a valid age";
+              //     }
+              //     return null;
+              //   },
+              // ),
               _buildEditableField(
                 label: 'Address',
                 controller: addressController,
@@ -277,17 +277,17 @@ class _AdminProfileState extends State<AdminProfile> {
                   return null;
                 },
               ),
-              _buildEditableField(
-                label: 'School',
-                controller: schoolController,
-                icon: Icons.school,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Enter a valid school name";
-                  }
-                  return null;
-                },
-              ),
+              // _buildEditableField(
+              //   label: 'School',
+              //   controller: schoolController,
+              //   icon: Icons.school,
+              //   validator: (value) {
+              //     if (value == null || value.isEmpty) {
+              //       return "Enter a valid school name";
+              //     }
+              //     return null;
+              //   },
+              // ),
               if (_isEditing)
                 _buildEditableField(
                   label: 'New Password (leave blank to keep current)',
