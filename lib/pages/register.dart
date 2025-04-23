@@ -207,7 +207,7 @@ class _RegistrationState extends State<Registration> {
                                   if (value == null ||
                                       value.isEmpty ||
                                       value.length <= 2) {
-                                    return "Enter a valid name";
+                                    return "Enter a valid parents name";
                                   }
                                   return null;
                                 },
@@ -244,7 +244,7 @@ class _RegistrationState extends State<Registration> {
                                   if (value == null ||
                                       value.isEmpty ||
                                       value.length <= 2) {
-                                    return "Enter a valid name";
+                                    return "Enter a valid phone number";
                                   }
                                   return null;
                                 },
@@ -282,7 +282,7 @@ class _RegistrationState extends State<Registration> {
                                   if (value == null ||
                                       value.isEmpty ||
                                       value.length <= 2) {
-                                    return "Enter a valid name";
+                                    return "Enter valid age";
                                   }
                                   return null;
                                 },
@@ -320,7 +320,7 @@ class _RegistrationState extends State<Registration> {
                                   if (value == null ||
                                       value.isEmpty ||
                                       value.length <= 2) {
-                                    return "Enter a valid name";
+                                    return "Enter a valid address";
                                   }
                                   return null;
                                 },
@@ -358,7 +358,7 @@ class _RegistrationState extends State<Registration> {
                                   if (value == null ||
                                       value.isEmpty ||
                                       value.length <= 2) {
-                                    return "Enter a valid name";
+                                    return "Enter a valid school name";
                                   }
                                   return null;
                                 },
