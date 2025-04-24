@@ -10,13 +10,14 @@ import 'package:flutter/material.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+// also import your own google-servive-json file.
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-          apiKey: "AIzaSyB5yDlF-4sGO4c1B9i4mz2FSHUbuDed8mo",
-          messagingSenderId: "227599926991",
-          appId: "1:227599926991:android:9e1018e786db74b390d9ba",
-          projectId: "cut-smartbanking-app",
-          storageBucket: "cut-smartbanking-app.appspot.com"));
+          apiKey: "your own api key",
+          messagingSenderId: "your own messaging sender id",
+          appId: "your own app id",
+          projectId: "your own project id",
+          storageBucket: "your own storage bucket",));
 
   runApp(const Transport());
 }
