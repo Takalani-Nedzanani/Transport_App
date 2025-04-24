@@ -13,11 +13,12 @@ Future main() async {
 // also import your own google-servive-json file.
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-          apiKey: "your own api key",
-          messagingSenderId: "your own messaging sender id",
-          appId: "your own app id",
-          projectId: "your own project id",
-          storageBucket: "your own storage bucket",));
+    apiKey: "your own api key",
+    messagingSenderId: "your own messaging sender id",
+    appId: "your own app id",
+    projectId: "your own project id",
+    storageBucket: "your own storage bucket",
+  ));
 
   runApp(const Transport());
 }
